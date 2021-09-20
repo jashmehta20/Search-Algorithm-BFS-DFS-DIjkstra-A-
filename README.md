@@ -15,9 +15,8 @@ Files included:
 ## Instructions to run the code
 
 - Gitclone the repository.
-- Edit the **map.csv** file to create your own map. Use 1 for obstacle and 0 for free space.
+- Edit the **map.csv** file to create your own map. Use 1 for obstacles and 0 for free space.
 - Run the main.py script to see the plotted results. 
 
 ## Results 
-
 The plot generated shows the path with the least cost. The terminal also shows number of steps required for the shortest path and the total steps taken to find the optimal solution. 
