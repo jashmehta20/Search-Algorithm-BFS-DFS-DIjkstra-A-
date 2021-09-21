@@ -19,4 +19,4 @@ Files included:
 - Run the main.py script to see the plotted results. 
 
 ## Results 
-The plot generated shows the path with the least cost. The terminal also shows number of steps required for the shortest path and the total steps taken to find the optimal 
+The plot generated shows the path with the least cost. The terminal also shows number of steps required for the shortest path and the total steps taken to find the optimal solution.
