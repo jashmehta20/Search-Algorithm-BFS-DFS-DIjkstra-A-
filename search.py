@@ -27,13 +27,15 @@ def init(grid, start, goal):
     return path, steps, found, Row, Col, visited, prev,rq,cq,grid
 
 def backtrack(goal,prev,path):
+    count=0
     at = [goal[0],goal[1]]                              # backtracking algorithm
     while at!=0:
+        count=count+1
         path.append(at)
         at = prev[at[0]][at[1]]
     path = path[::-1]
 
-    return path
+    return path,count
 
 def cost1(point,start,prev):
 
@@ -104,10 +106,11 @@ def bfs(grid, start, goal):
                 break
             
 
-    path=backtrack(goal,prev,path)
+    path,count=backtrack(goal,prev,path)
     
     if found==True:
         print(f"It takes {steps} steps to find a path using BFS")
+        print(f"The shortest path using BFS is: ",count)
     else:
         print("No path found")
     return path, steps
@@ -167,11 +170,13 @@ def dfs(grid, start, goal):
                 found=True
                 break
             
-    path=backtrack(goal,prev,path)
+    path,count=backtrack(goal,prev,path)
 
            
     if found:
         print(f"It takes {steps} steps to find a path using DFS")
+        print(f"The shortest path using DFS is: ",count)
+
     else:
         print("No path found")
     return path, steps
@@ -238,10 +243,12 @@ def dijkstra(grid, start, goal):
         
         queue.sort()                                            # sort queue based on cost 
     
-    path=backtrack(goal,prev,path)
+    path,count=backtrack(goal,prev,path)
 
     if found==True:
         print(f"It takes {steps} steps to find a path using Dijkstra")
+        print(f"The shortest path using Dijkstra is: ",count)
+
     else:
         print("No path found")
     return path, steps
@@ -316,10 +323,12 @@ def astar(grid, start, goal):
         
         queue.sort()                                                    # sort queue based on total cost 
 
-    path=backtrack(goal,prev,path)
+    path,count=backtrack(goal,prev,path)
 
     if found:
         print(f"It takes {steps} steps to find a path using A*")
+        print(f"The shortest path using A* is: ",count)
+
     else:
         print("No path found")
     return path, steps
